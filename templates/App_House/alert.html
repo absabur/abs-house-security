@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block title_block %}
+Alarm {%endblock%} {%block body_block%}
+<div class="parent alarm">
+  <div class="inner-image">
+    <h2>Alarm</h2>
+    <form method="POST">
+      <h4>Enter Correct Password To Stop Alarm</h4>
+      {% csrf_token %} {{form|crispy}}
+      <button type="button" id="togglePassword">
+        <i class="fa-solid fa-eye"></i>
+      </button>
+      <button type="submit" class="btn btn-primary w-100">Stop Alarm</button>
+    </form>
+  </div>
+  <img src="/media/alarm.jpeg" />
+</div>
+{%endblock%}

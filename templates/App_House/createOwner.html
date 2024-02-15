@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title_block %} Create House Member {%endblock%}
+{%block body_block%}
+<div class="parent">
+    <div class="inner-image pb-4">
+        <h3>Create a family member profile</h3>
+        <form method='POST'>
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="button" id="togglePassword"><i class="fa-solid fa-eye"></i></button>
+            <button type="submit" class="btn btn-primary w-100">Add a family member</button>
+        </form>
+    </div>
+    <img src="/media/lock.jpg"/>
+</div>
+{%endblock%}

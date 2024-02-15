@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title_block %} Inside the house {%endblock%}
+{%block body_block%}
+<div class="parent">
+    <div class="inner-image">
+        <h3>Inside the house</h3>
+        <a class="btn btn-dark" href="{%url 'App_House:lockClose'%}">Lock the house</a>
+    </div>
+    <img src="/media/inside.jpg"/>
+    <a class="btn btn-warning" style="position: fixed;bottom: 10px;right: 10px;" href="{%url 'App_House:change_password'%}">Change password</a>
+</div>
+{%endblock%}
